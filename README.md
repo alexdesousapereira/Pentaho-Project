@@ -54,7 +54,8 @@ Agora, iremos iniciar o processo de construção das transformações, trazendo 
 ***
 Para iniciar a criação de nosso DW, primeiramente iremos criar uma área para colocarmos as nossas dimensões e nossa tabela fato dentro do banco dados postgre.
 
-## Dimensão Calendário
+### Dimensão Calendário
+***
 Primeiramente iremos criar nossa dimensão calendário, para sua elaboração utilizaremos dos seguintes steps:
 - Generate Rows: com a finalidade de colocar uma data inicial para geração de nossa sk_data;
 - Add sequence: com a finalide de adicionar uma sequencia de datas para criação de nossa sk_data;
@@ -63,6 +64,55 @@ Primeiramente iremos criar nossa dimensão calendário, para sua elaboração ut
 - Values Maps: com a finalidade de criar as outras variáveis para nossa dim. calendário, a partir dos valores gerados do step calculator;
 - Select Values: com a finalidade de selecionar as variáveis pertinentes para nossa dim. calendário;
 - Table Output: com a finalidade de colocar a tabela "dim_calendario" dentro de nossos dw.
+
+IMG
+
+### Dimensão Cliente
+***
+O processo de criação de nossa dimensão cliente, utilizaremos dos seguintes steps:
+- Table Input: com a finalidade de puxarmos os dados de nossa stage área;
+- Concat Fields: com a finalidade de criarmos a varável nome completo;
+- Select Values: com a finalidade de selecionar as variáveis pertinentes para nossa dim. cliente;
+- Table Output: com a finalidade de colocar a tabela "dim_cliente" dentro de nossos dw.
+
+IMG
+
+### Dimensão Produto
+***
+O processo de criação de nossa dimensão produto, utilizaremos dos seguintes steps:
+- Table Input: com a finalidade de puxarmos os dados de nossa stage área;
+- Sort Rows: com a finalidade de organizar os "id" das tabelas de forma decrescente;
+- Merge Join: com a finalidade de fazer a junção das tabelas, todas através do left join;
+- If Field Values is Null: com a finalidade de tratar os valores nulos contidos com a junção das tabelas;
+- Dimension Lookup/Update: com a finalidade de colocar a tabela "dim_produto" dentro de nossos dw e juntamente com isto, criar uma sk produto.
+
+IMG
+
+### Dimensão Região
+***
+O processo de criação de nossa dimensão região, utilizaremos dos seguintes steps:
+- Table Input: com a finalidade de puxarmos os dados de nossa stage área;
+- Table Output: com a finalidade de colocar a tabela "dim_regiao" dentro de nossos dw.
+
+IMG
+
+### Dimensão Território
+O processo de criação de nossa dimensão território, utilizaremos dos seguintes steps:
+- Table Input: com a finalidade de puxarmos os dados de nossa stage área;
+- Table Output: com a finalidade de colocar a tabela "dim_territorio" dentro de nossos dw.
+
+IMG
+
+### Fato Vendas
+***
+- Table Input: com a finalidade de puxarmos os dados de nossa stage área;
+- Calculator: com a finalidade data em um formato tipo data;
+- Database Lookup: com a finalidade de buscar as "SK" das dimensões como base nos ids da tabela venda;
+- Select Values: com a finalidade de selecionar as variáveis pertinentes para nossa fato vendas;
+- Table Output: com a finalidade de colocar a tabela "fato_vendas" dentro de nossos dw.
+
+
+
 
 
 
