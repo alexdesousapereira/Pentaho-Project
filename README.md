@@ -1,6 +1,6 @@
 # Pentaho-Project
 ***
-    Este repositório contém um projeto de ETL da Empresa de Sr. João utilizando do software Pentaho Data Integretaion. Abaixo você encontrará todos os procedimentos feitos para criação do Data Warehouse (DW) referente ao setor de vendas.
+Este repositório contém um projeto de ETL da Empresa de Sr. João utilizando do software Pentaho Data Integretaion. Abaixo você encontrará todos os procedimentos feitos para criação do Data Warehouse (DW) referente ao setor de vendas.
  
 ## Introdução
 ***
