@@ -10,7 +10,7 @@ Sr João tem uma empresa que vende produtos pela internet. Hoje as caracteristic
 ***
 O objetivo desse exercício é fazer o processo completo dE ETL no Pentaho, a partir das tabelas disponabilizadas pela empresa dentro do banco de dados SQLServer. Assim, para criação do Data Warehouse ficou-se estabelecida a seguinte modelagem, conforme definido pelo setor de TI:
 
-[Requisitos]https://i.imgur.com/oPcPUNq.png
+[Requisitos](https://i.imgur.com/oPcPUNq.png)
 
 ## Requisitos
 ***
