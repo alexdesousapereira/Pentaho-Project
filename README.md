@@ -10,7 +10,7 @@ Sr João tem uma empresa que vende produtos pela internet. Hoje as caracteristic
 ***
 O objetivo desse exercício é fazer o processo completo dE ETL no Pentaho, a partir das tabelas disponabilizadas pela empresa dentro do banco de dados SQLServer. Assim, para criação do Data Warehouse ficou-se estabelecida a seguinte modelagem, conforme definido pelo setor de TI:
 
-[Requisitos](https://i.imgur.com/oPcPUNq.png)
+![Requisitos](https://i.imgur.com/oPcPUNq.png)
 
 ## Requisitos
 ***
@@ -31,30 +31,30 @@ Agora, iremos iniciar o processo de construção das transformações, trazendo 
 
 ### Categoria Stage 
 ***
-[Categoria]https://i.imgur.com/uvk3c4c.png
+![Categoria](https://i.imgur.com/uvk3c4c.png)
 
 ### Cliente Stage
 ***
-[Cliente]https://i.imgur.com/HmS7WAA.png
+![Cliente](https://i.imgur.com/HmS7WAA.png)
 ### Produto Stage
 ***
-[Produto]https://i.imgur.com/HFDnrEY.png
+![Produto](https://i.imgur.com/HFDnrEY.png)
 
 ### Região Stage
 ***
-[Região]https://i.imgur.com/bmXy5gr.png
+![Região](https://i.imgur.com/bmXy5gr.png)
 
 ### Subcategoria Stage
 ***
-[Subcategoria]https://i.imgur.com/BaO4xY4.png
+![Subcategoria](https://i.imgur.com/BaO4xY4.png)
 
 ### Território Stage
 ***
-[Territorio]https://i.imgur.com/4epwiWg.png
+![Territorio](https://i.imgur.com/4epwiWg.png)
 
 ### Vendas Internet Stage
 ***
-[Vendas]https://i.imgur.com/UWmXEA4.png
+![Vendas](https://i.imgur.com/UWmXEA4.png)
 
 ## Criando o Data Warehouse
 ***
@@ -71,7 +71,7 @@ Primeiramente iremos criar nossa dimensão calendário, para sua elaboração ut
 - Select Values: com a finalidade de selecionar as variáveis pertinentes para nossa dim. calendário;
 - Table Output: com a finalidade de colocar a tabela "dim_calendario" dentro de nossos dw.
 
-[Calendario]https://i.imgur.com/hwcySSM.png
+![Calendario](https://i.imgur.com/hwcySSM.png)
 
 ### Dimensão Cliente
 ***
@@ -81,7 +81,7 @@ O processo de criação de nossa dimensão cliente, utilizaremos dos seguintes s
 - Select Values: com a finalidade de selecionar as variáveis pertinentes para nossa dim. cliente;
 - Table Output: com a finalidade de colocar a tabela "dim_cliente" dentro de nossos dw.
 
-[Cliente]https://i.imgur.com/RPxTXom.png
+![Cliente](https://i.imgur.com/RPxTXom.png)
 
 ### Dimensão Produto
 ***
@@ -92,7 +92,7 @@ O processo de criação de nossa dimensão produto, utilizaremos dos seguintes s
 - If Field Values is Null: com a finalidade de tratar os valores nulos contidos com a junção das tabelas;
 - Dimension Lookup/Update: com a finalidade de colocar a tabela "dim_produto" dentro de nossos dw e juntamente com isto, criar uma sk produto.
 
-[Produto]https://i.imgur.com/lzqgyAs.png
+![Produto](https://i.imgur.com/lzqgyAs.png)
 
 ### Dimensão Região
 ***
@@ -100,14 +100,14 @@ O processo de criação de nossa dimensão região, utilizaremos dos seguintes s
 - Table Input: com a finalidade de puxarmos os dados de nossa stage área;
 - Table Output: com a finalidade de colocar a tabela "dim_regiao" dentro de nossos dw.
 
-[Regiao]https://i.imgur.com/8EcpzlL.png
+![Regiao](https://i.imgur.com/8EcpzlL.png)
 
 ### Dimensão Território
 O processo de criação de nossa dimensão território, utilizaremos dos seguintes steps:
 - Table Input: com a finalidade de puxarmos os dados de nossa stage área;
 - Table Output: com a finalidade de colocar a tabela "dim_territorio" dentro de nossos dw.
 
-[Territorio]https://i.imgur.com/nZkLVdN.png
+![Territorio](https://i.imgur.com/nZkLVdN.png)
 
 ### Fato Vendas
 ***
@@ -118,7 +118,7 @@ O processo de criação de nossa fato vendas, utilizaremos dos seguintes steps:
 - Select Values: com a finalidade de selecionar as variáveis pertinentes para nossa fato vendas;
 - Table Output: com a finalidade de colocar a tabela "fato_vendas" dentro de nossos dw.
 
-[Vendas]https://i.imgur.com/4qGw0zg.png
+![Vendas](https://i.imgur.com/4qGw0zg.png)
 
 ## Jobs
 Nesta parte de nosso repositório ficara descrito os procedimentos para criação de nossos jobs no pentaho.
@@ -130,7 +130,7 @@ O processo de criação de nossa job stage, utilizaremos dos seguintes steps:
 - Transformation: com a finalide de puxar as tranformações feitas, para criação da stage área;
 - Sucess: com a finalidade de finalizar os steps da job.
 
-[Stage]https://i.imgur.com/mx2cdbK.png
+![Stage](https://i.imgur.com/mx2cdbK.png)
 
 ### Job Data Warehouse
 O processo de criação de nossa job DW, utilizaremos dos seguintes steps:
@@ -138,7 +138,7 @@ O processo de criação de nossa job DW, utilizaremos dos seguintes steps:
 - Transformation: com a finalide de puxar as tranformações feitas, para criação do Data Warehouse e trazer uma transformação que deleta as chaves nulas geradas na tabela produto;
 - Sucess: com a finalidade de finalizar os steps da job.
 
-[Warehouse]https://i.imgur.com/2yvrrpW.png
+![Warehouse](https://i.imgur.com/2yvrrpW.png)
 
 ### Job Principal
 O processo de criação de nossa job principal, utilizaremos dos seguintes steps:
@@ -149,7 +149,7 @@ O processo de criação de nossa job principal, utilizaremos dos seguintes steps
 - Abort Job: com a finalidade de finalizar as transformações caso as jobs stage e DW não forem completamente executadas;
 - Sucess: com a finalidade de finalizar os steps da job.
 
-[Principal]https://i.imgur.com/ueBrhjn.png
+![Principal](https://i.imgur.com/ueBrhjn.png)
 
 ## Automatização da Job Principal
 Agora iremos criar uma conexão com o servidor windows, com a finalidade de executar nossa job principal todos os dias as 00:00 horas.
@@ -159,19 +159,19 @@ C:\data-integration\Kitchen.bat /rep:"Projeto" /job:"Job_Principal"
 
 Logo após, criado nosso arquivo.bat, iremos em agendador de tarefas e criaremos uma nova tarefa.
 
-[Automatizacao1]https://i.imgur.com/I5aFhwq.png
+![Automatizacao1](https://i.imgur.com/I5aFhwq.png)
 
 Deste modo, execuremos as seguintes configurações para que possamos automatizar nosso projeto de ETL.
 
-[AT2]https://i.imgur.com/k1LYec8.png
+![AT2](https://i.imgur.com/k1LYec8.png)
 
-[AT3]https://i.imgur.com/YhzfDSZ.png
+![AT3](https://i.imgur.com/YhzfDSZ.png)
 
-[AT4]https://i.imgur.com/elTFUuf.png
+![AT4](https://i.imgur.com/elTFUuf.png)
 
-[AT5]https://i.imgur.com/VudmD0a.png
+![AT5](https://i.imgur.com/VudmD0a.png)
 
-[AT6]https://i.imgur.com/aOd9AJO.png
+![AT6](https://i.imgur.com/aOd9AJO.png)
 
 Contudo, clicaremos em ok e nosso projeto estará finalizado.
 
