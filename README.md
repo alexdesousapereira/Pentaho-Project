@@ -66,9 +66,9 @@ Para iniciar a criação de nosso DW, primeiramente iremos criar uma área para 
 ***
 Primeiramente iremos criar nossa dimensão calendário, para sua elaboração utilizaremos dos seguintes steps:
 - Generate Rows: com a finalidade de colocar uma data inicial para geração de nossa sk_data;
-- Add sequence: com a finalide de adicionar uma sequencia de datas para criação de nossa sk_data;
-- Calculator: com a finalidade de a partir de nossa carga inicial e sequencia de dias gerar nossa sk_data e outras variaveis pertinentes em nossa dim. calendário;
-- Formula: com a finalide de criar a variável SemanaAnoNome;
+- Add sequence: com a finalidade de adicionar uma sequência de datas para criação de nossa sk_data;
+- Calculator: com a finalidade de a partir de nossa carga inicial e sequencia de dias gerar nossa sk_data e outras variáveis pertinentes em nossa dim. calendário;
+- Formula: com a finalidade de criar a variável SemanaAnoNome;
 - Values Maps: com a finalidade de criar as outras variáveis para nossa dim. calendário, a partir dos valores gerados do step calculator;
 - Select Values: com a finalidade de selecionar as variáveis pertinentes para nossa dim. calendário;
 - Table Output: com a finalidade de colocar a tabela "dim_calendario" dentro de nossos dw.
@@ -89,7 +89,7 @@ O processo de criação de nossa dimensão cliente, utilizaremos dos seguintes s
 ***
 O processo de criação de nossa dimensão produto, utilizaremos dos seguintes steps:
 - Table Input: com a finalidade de puxarmos os dados de nossa stage área;
-- Sort Rows: com a finalidade de organizar os "id" das tabelas de forma decrescente;
+- Sort Rows: com a finalidade de organizar os "ids" das tabelas de forma decrescente;
 - Merge Join: com a finalidade de fazer a junção das tabelas, todas através do left join;
 - If Field Values is Null: com a finalidade de tratar os valores nulos contidos com a junção das tabelas;
 - Dimension Lookup/Update: com a finalidade de colocar a tabela "dim_produto" dentro de nossos dw e juntamente com isto, criar uma sk produto.
@@ -113,12 +113,12 @@ O processo de criação de nossa dimensão território, utilizaremos dos seguint
 
 ### Fato Vendas
 ***
-O processo de criação de nossa fato vendas, utilizaremos dos seguintes steps:
+O processo de criação de nossa tabela fato vendas, utilizaremos dos seguintes steps:
 - Table Input: com a finalidade de puxarmos os dados de nossa stage área;
 - Calculator: com a finalidade data em um formato tipo data;
 - Database Lookup: com a finalidade de buscar as "SK" das dimensões como base nos ids da tabela venda;
-- Select Values: com a finalidade de selecionar as variáveis pertinentes para nossa fato vendas;
-- Table Output: com a finalidade de colocar a tabela "fato_vendas" dentro de nossos dw.
+- Select Values: com a finalidade de selecionar as variáveis pertinentes para nossa tabela fato vendas;
+- Table Output: com a finalidade de colocar a tabela "fato vendas" dentro de nossos dw.
 
 ![Vendas](https://i.imgur.com/4qGw0zg.png)
 
@@ -128,8 +128,8 @@ Nesta parte de nosso repositório ficara descrito os procedimentos para criaçã
 ### Job Stage
 ***
 O processo de criação de nossa job stage, utilizaremos dos seguintes steps:
-- Start: com a finalide de começar os steps da job;
-- Transformation: com a finalide de puxar as tranformações feitas, para criação da stage área;
+- Start: com a finalidade de começar os steps da job;
+- Transformation: com a finalidade de puxar as transformações feitas, para criação da stage área;
 - Sucess: com a finalidade de finalizar os steps da job.
 
 ![Stage](https://i.imgur.com/mx2cdbK.png)
@@ -145,9 +145,9 @@ O processo de criação de nossa job DW, utilizaremos dos seguintes steps:
 ### Job Principal
 O processo de criação de nossa job principal, utilizaremos dos seguintes steps:
 - Start: com a finalide de começar os steps da job;
-- Set Variables: com a finalidade de selecionar o ano em que serão trazido os dados da tabela vendas; 
+- Set Variables: com a finalidade de selecionar o ano em que serão trazidos os dados da tabela vendas; 
 - Job: com a finalidade de rodar as jobs stage e DW;
-- Mail: com a finalide de mandar um email quando as cargas do jobs stage e dw forem ou não carregadas;
+- Mail: com a finalidade de mandar um email quando as cargas do jobs stage e dw forem ou não carregadas;
 - Abort Job: com a finalidade de finalizar as transformações caso as jobs stage e DW não forem completamente executadas;
 - Sucess: com a finalidade de finalizar os steps da job.
 
@@ -163,7 +163,7 @@ Logo após, criado nosso arquivo.bat, iremos em agendador de tarefas e criaremos
 
 ![Automatizacao1](https://i.imgur.com/I5aFhwq.png)
 
-Deste modo, execuremos as seguintes configurações para que possamos automatizar nosso projeto de ETL.
+Deste modo, vamos executar as seguintes configurações para que possamos automatizar nosso projeto de ETL.
 
 ![AT2](https://i.imgur.com/k1LYec8.png)
 
