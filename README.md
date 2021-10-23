@@ -25,7 +25,7 @@ Deste modo, para que este projeto do setor de TI seja feito, a empresa de sr. Jo
 ##  Criando Stage
 Para iniciar nossos trabalhos, primeiramente iremos criar uma área stage dentro banco dados postgre.
 
-![Stage](https://i.imgur.com/zKPrKVm.png)
+![Stage](https://i.imgur.com/zYs9Fbq.png)
 
 Agora, iremos iniciar o processo de construção das transformações, trazendo os dados da origem para a stage.
 
@@ -60,7 +60,7 @@ Agora, iremos iniciar o processo de construção das transformações, trazendo 
 ***
 Para iniciar a criação de nosso DW, primeiramente iremos criar uma área para colocarmos as nossas dimensões e nossa tabela fato dentro do banco dados postgre.
 
-![DW](https://i.imgur.com/zYs9Fbq.png)
+![DW](https://i.imgur.com/zKPrKVm.png)
 
 ### Dimensão Calendário
 ***
