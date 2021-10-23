@@ -177,6 +177,16 @@ Deste modo, vamos executar as seguintes configurações para que possamos automa
 
 Contudo, clicaremos em ok e nosso projeto estará finalizado.
 
+# Direitos de Uso
+***
+Este repositório têm como objetivo apresentar um ** projeto de ETL** feito no Pentaho Data Integration. Então, dentro deste repositório você pode utilizar deste conteúdo sem nenhuma restrição contanto que não me responsebilize por eventuais causas ou danos morais perante minha responsabilidade.	
+
+Exigido | Permitido | Proibido
+:---: | :---: | :---:
+Aviso de licença e direitos autorais | Uso comercial | Responsabilidade Assegurada
+ || Modificação ||	
+ || Distribuição ||	
+ || Sublicenciamento || 	
 
 
 
