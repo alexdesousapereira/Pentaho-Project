@@ -15,8 +15,8 @@ O objetivo desse exercício é fazer o processo completo de ETL utilizando do so
 ## Requisitos
 ***
 Deste modo, para que este projeto do setor de TI seja feito, a empresa de sr. João demandou dos seguintes requisitos:
-1. Utilizar dos dados disponíveis no banco de dados da empresa (SQLServer), afim de criar uma stage área juntamente com data warehouse dentro do banco postgres.
-2. Executar todo o processo de ETL no Pentaho, conforme orientações;
+1. Utilizar dos dados disponíveis no banco de dados da empresa (SQLServer), afim de criar uma stage área juntamente com data warehouse dentro do banco postgre.
+2. Executar todo o processo de ETL no Pentaho, conforme as orientações;
 3. Criar uma job_stage a fim de executar o procedimento de carregamento da stage área;
 4. Cria uma job_DW a fim de executar o procedimento de carregamento do Data Warehouse;
 5. Criar uma job_Principal a fim de executar todo o processo de ETL;
@@ -115,7 +115,7 @@ O processo de criação de nossa dimensão território, utilizaremos dos seguint
 ***
 O processo de criação de nossa tabela fato vendas, utilizaremos dos seguintes steps:
 - Table Input: com a finalidade de puxarmos os dados de nossa stage área;
-- Calculator: com a finalidade data em um formato tipo data;
+- Calculator: com a finalidade de colocar data em um formato tipo data;
 - Database Lookup: com a finalidade de buscar as "SK" das dimensões como base nos ids da tabela venda;
 - Select Values: com a finalidade de selecionar as variáveis pertinentes para nossa tabela fato vendas;
 - Table Output: com a finalidade de colocar a tabela "fato vendas" dentro de nossos dw.
@@ -129,7 +129,7 @@ Nesta parte de nosso repositório ficara descrito os procedimentos para criaçã
 ***
 O processo de criação de nossa job stage, utilizaremos dos seguintes steps:
 - Start: com a finalidade de começar os steps da job;
-- Transformation: com a finalidade de puxar as transformações feitas, para criação da stage área;
+- Transformation: com a finalidade de puxar as transformações feitas para criação da stage área;
 - Sucess: com a finalidade de finalizar os steps da job.
 
 ![Stage](https://i.imgur.com/mx2cdbK.png)
